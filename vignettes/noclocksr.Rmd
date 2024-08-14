@@ -1,0 +1,19 @@
+---
+title: "noclocksr"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{noclocksr}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(noclocksr)
+```
