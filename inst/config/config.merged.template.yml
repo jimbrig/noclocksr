@@ -1,0 +1,47 @@
+default:
+  project: "<PROJECT>"
+  ai:
+    openai_api_key: "<OPENAI_API_KEY>"
+    openai_organization_id: "<OPENAI_ORGANIZATION_ID>"
+    openai_organization_name: "<OPENAI_ORGANIZATION_NAME>"
+    anthropic_api_key: "<ANTHROPIC_API_KEY>"
+    gemini_api_key: "<GEMINI_API_KEY>"
+    perplexity_api_key: "<PERPLEXITY_API_KEY>"
+    tavily_api_key: "<TAVILY_API_KEY>"
+    groq_api_key: "<GROQ_API_KEY>"
+    openrouter_api_key: "<OPENROUTER_API_KEY>"
+    serper_api_key: "<SERPER_API_KEY>"
+    serpapi_api_key: "<SERPAPI_API_KEY>"
+    huggingface_api_key: "<HUGGINGFACE_API_KEY>"
+    langsmith_api_key: "<LANGSMITH_API_KEY>"
+    transactional_api_key: "<TRANSACTIONAL_API_KEY>"
+    vanna_api_key: "<VANNA_API_KEY>"
+  misc:
+    mxtoolbox_api_key: "<MXTOOLBOX_API_KEY>"
+    obsidian_local_rest_api_key: "<OBSIDIAN_LOCAL_REST_API_KEY>"
+  docker:
+    dockerhub_api_key: "<DOCKERHUB_API_KEY>"
+    dockerhub_org: "<DOCKERHUB_ORG>"
+    ghcr_api_key: "<GHCR_API_KEY>"
+    ghcr_org: "<GHCR_ORG>"
+    gcar_admin_user: "<GCAR_ADMIN_USER>"
+    gcar_admin_pass: "<GCAR_ADMIN_PASS>"
+    acr_admin_user: "<ACR_ADMIN_USER>"
+    acr_admin_pass: "<ACR_ADMIN_PASS>"
+  tools:
+    imgur:
+      imgur_client_id: "<IMGUR_CLIENT_ID>"
+      imgur_client_secret: "<IMGUR_CLIENT_SECRET>"
+    brandfetch:
+      brandfetch_api_key: "<BRANDFETCH_API_KEY>"
+    removebg:
+      removebg_api_key: "<REMOVEBG_API_KEY>"
+    unsplash:
+      unsplash_access_key: "<UNSPLASH_ACCESS_KEY>"
+      unsplash_secret_key: "<UNSPLASH_SECRET_KEY>"
+    infisical:
+      infisical_api_key: "<INFISICAL_API_KEY>"
+    sentry:
+      sentry_dsn: "<SENTRY_DSN>"
+      sentry_auth_token: "<SENTRY_AUTH_TOKEN>"
+

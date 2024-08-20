@@ -1,0 +1,17 @@
+default:
+  imgur:
+    imgur_client_id: "<IMGUR_CLIENT_ID>"
+    imgur_client_secret: "<IMGUR_CLIENT_SECRET>"
+  brandfetch:
+    brandfetch_api_key: "<BRANDFETCH_API_KEY>"
+  removebg:
+    removebg_api_key: "<REMOVEBG_API_KEY>"
+  unsplash:
+    unsplash_access_key: "<UNSPLASH_ACCESS_KEY>"
+    unsplash_secret_key: "<UNSPLASH_SECRET_KEY>"
+  infisical:
+    infisical_api_key: "<INFISICAL_API_KEY>"
+  sentry:
+    sentry_dsn: "<SENTRY_DSN>"
+    sentry_auth_token: "<SENTRY_AUTH_TOKEN>"
+

@@ -1,0 +1,6 @@
+*
+!.gitignore
+!*.encrypted.yml
+!*.template.yml
+!*.md
+!*.R
