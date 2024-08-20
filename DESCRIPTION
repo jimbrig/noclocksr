@@ -12,8 +12,10 @@ Description: Library created for internal development at No Clocks.
 License: MIT + file LICENSE
 Imports: 
     cli,
+    fs,
     glue,
     htmltools,
+    httr2,
     purrr,
     rlang,
     shiny,
@@ -31,3 +33,5 @@ Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2.9000
+URL: http://docs.jimbrig.com/noclocksr/, https://github.com/jimbrig/noclocksr
+BugReports: https://github.com/jimbrig/noclocksr/issues
