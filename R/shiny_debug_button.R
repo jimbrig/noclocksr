@@ -12,7 +12,7 @@
   "ctrl" = "ctrlKey",
   "shift" = "shiftKey",
   "alt" = "altKey",
-  "meta" = "metaKey"  # Command key on Mac
+  "meta" = "metaKey" # Command key on Mac
 )
 
 .key_to_code <- function(key) {
@@ -73,9 +73,7 @@ shiny_debug_button_ui <- function(
     label = "Debug",
     icon = shiny::icon("bug"),
     hide = TRUE,
-    keyboard_shortcut = "Ctrl + Alt + D"
-) {
-
+    keyboard_shortcut = "Ctrl + Alt + D") {
   ns <- shiny::NS(id)
 
   btn <- shiny::actionButton(
@@ -90,7 +88,9 @@ shiny_debug_button_ui <- function(
     paste0("$('#", ns("shortcut_text"), "').hide();")
   }
 
-  keys <- strsplit(keyboard_shortcut, " \\+ ") |> unlist() |> purrr::map_chr(.key_to_code)
+  keys <- strsplit(keyboard_shortcut, " \\+ ") |>
+    unlist() |>
+    purrr::map_chr(.key_to_code)
 
   modifier_keys <- keys[keys %in% c("ctrlKey", "shiftKey", "altKey", "metaKey")]
   main_key <- keys[!keys %in% modifier_keys]
@@ -122,7 +122,7 @@ shiny_debug_button_ui <- function(
   }
 
   htmltools::tagList(
-    shinyjs::useShinyjs(),  # Load ShinyJS if needed
+    shinyjs::useShinyjs(), # Load ShinyJS if needed
     btn,
     htmltools::tags$script(
       htmltools::HTML(
@@ -155,8 +155,8 @@ shiny_debug_button_ui <- function(
 shiny_debug_button_server <- function(id = "browser") {
   shiny::moduleServer(id, function(input, output, session) {
     observeEvent(input$browser_btn, {
-      print("Debug button clicked")  # For debugging
-      browser()  # Should trigger the browser() function
+      print("Debug button clicked") # For debugging
+      browser() # Should trigger the browser() function
     })
   })
 }

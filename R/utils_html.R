@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : HTML Utilities
@@ -65,7 +64,6 @@ NULL
 #'   htmltools::tags$h1("Hello World!")
 #' )
 flucol <- function(..., width = 12, offset = 0) {
-
   if (!is.numeric(width) || width < 1 || width > 12) {
     cli::cli_abort("Invalid width provided: {.field {width}}. Must be an integer between 1 and 12.")
   }
@@ -77,7 +75,6 @@ flucol <- function(..., width = 12, offset = 0) {
       ...
     )
   )
-
 }
 
 
@@ -110,13 +107,15 @@ flucol <- function(..., width = 12, offset = 0) {
 #' # provide shiny icon tag
 #' icon_text(shiny::icon("table"), "Table") |> htmltools::browsable()
 icon_text <- function(icon, text) {
-
   if (!inherits(icon, "shiny.tag") && !is.null(icon) && is.character(icon)) {
-    tryCatch({
-      icon <- shiny::icon(icon)
-    }, error = function(e) {
-      stop("icon must be a valid shiny icon tag")
-    })
+    tryCatch(
+      {
+        icon <- shiny::icon(icon)
+      },
+      error = function(e) {
+        stop("icon must be a valid shiny icon tag")
+      }
+    )
   }
 
   htmltools::tagHasAttribute(icon, attr = "aria-label")
@@ -133,7 +132,3 @@ icon_text <- function(icon, text) {
     )
   )
 }
-
-
-
-

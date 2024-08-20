@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Configuration Encryption
@@ -70,9 +69,7 @@ encrypt_cfg_file <- function(
     cfg_file = Sys.getenv("R_CONFIG_FILE", "inst/config/config.yml"),
     key = "NOCLOCKS_ENCRYPTION_KEY",
     overwrite = FALSE,
-    ...
-) {
-
+    ...) {
   if (is.null(Sys.getenv(key)) || !httr2::secret_has_key(key)) {
     cli::cli_abort(
       "Encryption key: {.field {key}} not found."
@@ -97,7 +94,6 @@ encrypt_cfg_file <- function(
 
   cli::cli_alert_success("Successfully encrypted the config file: {.file {cfg_file_encrypted}}.")
   return(invisible(0))
-
 }
 
 
@@ -114,11 +110,9 @@ encrypt_cfg_file <- function(
 #' @importFrom usethis use_git_ignore
 #' @importFrom config get
 decrypt_cfg_file <- function(
-  cfg_file = Sys.getenv("R_CONFIG_FILE", "inst/config/config.yml"),
-  cfg_file_encrypted = .get_encrypted_cfg_file(cfg_file),
-  key = "NOCLOCKS_ENCRYPTION_KEY"
-) {
-
+    cfg_file = Sys.getenv("R_CONFIG_FILE", "inst/config/config.yml"),
+    cfg_file_encrypted = .get_encrypted_cfg_file(cfg_file),
+    key = "NOCLOCKS_ENCRYPTION_KEY") {
   if (!httr2::secret_has_key(key)) {
     cli::cli_alert_danger("Encryption key: {.field {key}} not found.")
     cli::cli_abort("Please set the encryption key in your environment variables.")
@@ -144,5 +138,4 @@ decrypt_cfg_file <- function(
   cli::cli_alert_info("Set `R_CONFIG_FILE` to: {.file {cfg_file_decrypted}}")
 
   return(invisible(config::get()))
-
 }

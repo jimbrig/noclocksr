@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : noclocksr - Data
@@ -86,9 +85,7 @@ document_dataset <- function(
     file = fs::path("R", "data.R"),
     append = TRUE,
     overwrite = !append,
-    ...
-) {
-
+    ...) {
   # Ensure col_types and col_descs match the number of columns
   col_names <- names(data_obj)
   stopifnot(
@@ -141,4 +138,3 @@ document_dataset <- function(
 
   cat(skeleton, file = file, append = append, sep = "\n")
 }
-

@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Validate Configuration
@@ -25,7 +24,6 @@
 #'
 #' @importFrom cli cli_abort
 validate_cfg <- function(cfg) {
-
   if (!is.list(cfg)) {
     cli::cli_abort("Config must be a list.")
   }
