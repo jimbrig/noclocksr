@@ -6,3 +6,10 @@
 ^examples$
 ^build$
 ^src$
+^data-raw$
+^\.github$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^codecov\.yml$
+^CHANGELOG\.md$

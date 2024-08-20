@@ -1,0 +1,6 @@
+/* Make badges rouded */
+.badge {
+  border-radius: 1em;
+/* Make the badge text smaller */
+  font-size: 0.8em;
+}

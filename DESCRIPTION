@@ -10,10 +10,15 @@ Authors@R: c(
   )
 Description: Library created for internal development at No Clocks.
 License: MIT + file LICENSE
+URL: http://docs.jimbrig.com/noclocksr/,
+    https://github.com/jimbrig/noclocksr
+BugReports: https://github.com/jimbrig/noclocksr/issues
 Imports: 
     cli,
+    fs,
     glue,
     htmltools,
+    httr2,
     purrr,
     rlang,
     shiny,
