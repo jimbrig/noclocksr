@@ -2,7 +2,6 @@ require(shiny)
 require(htmltools)
 
 test_that("shiny_debug_button_ui generates correct UI structure", {
-
   ui <- shiny_debug_button_ui(
     id = "browser_btn",
     label = "Debug",

@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Configuration Template
@@ -55,7 +54,6 @@
 #' @examples
 #' generate_config_template("inst/config/config.yml", "inst/config/config.template.yml")
 create_cfg_template <- function(input_file, output_file = NULL) {
-
   if (is.null(output_file)) {
     output_file <- gsub("\\.yml$", ".template.yml", input_file)
   }

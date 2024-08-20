@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Minification Utilities
@@ -17,7 +16,6 @@
 )
 
 .minify_req <- function(lang, code) {
-
   base_url <- "https://www.toptal.com/developers/jsmin/api/minify"
 
   req <- httr2::request(base_url) |>
@@ -33,7 +31,6 @@
     httr2::resp_check_status()
 
   res |> httr2::resp_body_string()
-
 }
 
 # minify_css -------------------------------------------------------------
@@ -49,7 +46,6 @@
 #'
 #' @export
 minify_css <- function(css) {
-
   base_url <- "https://www.toptal.com/developers/cssminifier/api/raw"
 
   req <- httr2::request(base_url) |>

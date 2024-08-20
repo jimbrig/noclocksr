@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Initialize Configuration
@@ -54,17 +53,15 @@
 #' @importFrom config get
 #' @importFrom usethis use_git_ignore
 cfg_init <- function(
-  path = here::here("inst/config"),
-  cfg = list(default = list(NULL)),
-  cfg_file = "config.yml",
-  cfg_file_encrypted = "config.encrypted.yml",
-  cfg_file_template = "config.template.yml",
-  encryption_key_name = "NOCLOCKS_ENCRYPTION_KEY",
-  overwrite = FALSE,
-  symlink = TRUE,
-  ...
-) {
-
+    path = here::here("inst/config"),
+    cfg = list(default = list(NULL)),
+    cfg_file = "config.yml",
+    cfg_file_encrypted = "config.encrypted.yml",
+    cfg_file_template = "config.template.yml",
+    encryption_key_name = "NOCLOCKS_ENCRYPTION_KEY",
+    overwrite = FALSE,
+    symlink = TRUE,
+    ...) {
   cfg_dir <- fs::path(path)
   if (!fs::dir_exists(cfg_dir)) {
     fs::dir_create(cfg_dir)
@@ -117,7 +114,9 @@ cfg_init <- function(
   cfg_file_backup <- fs::path_ext_remove(cfg_file) |>
     paste0(".backup.yml") |>
     fs::path()
-  if (fs::file_exists(cfg_file_backup)) { fs::file_delete(cfg_file_backup) }
+  if (fs::file_exists(cfg_file_backup)) {
+    fs::file_delete(cfg_file_backup)
+  }
   fs::file_move(cfg_file, cfg_file_backup)
   decrypt_cfg_file(cfg_file_encrypted)
 
@@ -135,11 +134,9 @@ cfg_init <- function(
     } else {
       fs::link_create(cfg_file, cfg_link, symbolic = TRUE)
     }
-
   }
 
   return(invisible(config::get()))
-
 }
 
 # cfg_d_init --------------------------------------------------------------
@@ -182,16 +179,14 @@ cfg_init <- function(
 #' @importFrom config get merge
 #' @importFrom usethis use_git_ignore
 cfg_d_init <- function(
-  path = here::here("inst/config"),
-  configs = list(example = list(default = list(NULL))),
-  merge = TRUE,
-  ignore = TRUE,
-  overwrite = FALSE,
-  templates = FALSE,
-  include_encrypted = FALSE,
-  ...
-) {
-
+    path = here::here("inst/config"),
+    configs = list(example = list(default = list(NULL))),
+    merge = TRUE,
+    ignore = TRUE,
+    overwrite = FALSE,
+    templates = FALSE,
+    include_encrypted = FALSE,
+    ...) {
   cfg_dir <- fs::path_rel(path, here::here())
   cfg_d_dir <- fs::path_rel(fs::path(path, "config.d"), here::here())
 
@@ -215,7 +210,6 @@ cfg_d_init <- function(
     )
 
     cli::cli_alert_success("Setup gitignore for {.path {cfg_d_dir}}.")
-
   }
 
   purrr::walk(configs, validate_cfg)
@@ -224,7 +218,7 @@ cfg_d_init <- function(
   )
 
   cfg_d_names <- names(configs)
-  cfg_d_files <- purrr::map_chr(cfg_names, ~glue::glue("{cfg_d_dir}/{.x}.config.yml"))
+  cfg_d_files <- purrr::map_chr(cfg_names, ~ glue::glue("{cfg_d_dir}/{.x}.config.yml"))
 
   purrr::walk2(
     cfg_d_files,
@@ -241,16 +235,14 @@ cfg_d_init <- function(
   )
 
   if (templates) {
-
     cfg_d_templates <- purrr::map_chr(cfg_d_files, fs::path_ext_remove) |>
-      purrr::map_chr(~paste0(.x, ".template.yml")) |>
+      purrr::map_chr(~ paste0(.x, ".template.yml")) |>
       purrr::map_chr(fs::path)
 
     purrr::walk2(cfg_d_files, cfg_d_templates, create_cfg_template)
     cli::cli_alert_success(
       "Successfully created {.field {length(cfg_d_templates)}} config file templates: {.field {basename(cfg_d_templates)}}."
     )
-
   }
 
   if (include_encrypted) {
@@ -260,7 +252,7 @@ cfg_d_init <- function(
     )
 
     cfg_d_encrypted_files <- purrr::map_chr(cfg_d_files, fs::path_ext_remove) |>
-      purrr::map_chr(~paste0(.x, ".encrypted.yml")) |>
+      purrr::map_chr(~ paste0(.x, ".encrypted.yml")) |>
       purrr::map_chr(fs::path)
 
     cli::cli_alert_success(
@@ -269,7 +261,7 @@ cfg_d_init <- function(
   }
 
   if (merge) {
-    cfg_d_cfgs_merged <- purrr::map(cfg_d_files, ~config::get(file = .x)) |>
+    cfg_d_cfgs_merged <- purrr::map(cfg_d_files, ~ config::get(file = .x)) |>
       setNames(cfg_d_names)
 
     base_cfg <- config::get(file = fs::path(path, "config.yml"))
@@ -285,9 +277,7 @@ cfg_d_init <- function(
     )
 
     encrypt_cfg_file(fs::path(path, "config.merged.yml"))
-
   }
 
   return(invisible(config::get(file = fs::path(path, "config.merged.yml"))))
-
 }

@@ -1,11 +1,9 @@
-
 library(glue)
 library(fs)
 library(purrr)
 
 
 test_that("document_dataset creates the expected documentation", {
-
   # Create a sample dataset
   data(mtcars)
 
@@ -51,7 +49,6 @@ test_that("document_dataset creates the expected documentation", {
 })
 
 test_that("document_dataset respects overwrite and append flags", {
-
   # Create a sample dataset
   data(mtcars)
 
