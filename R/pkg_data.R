@@ -45,26 +45,37 @@
 #' @importFrom glue glue
 #'
 #' @examples
+#' # Create a sample dataset
 #' data(mtcars)
+#'
+#' # Temporary file for testing
+#' temp_file <- fs::path_temp("test_mtcars.R")
+#'
+#' # Call the function
 #' document_dataset(
 #'   mtcars,
 #'   name = "mtcars",
 #'   description = "Motor Trend Car Road Tests",
 #'   source = "Henderson and Velleman (1981)",
 #'   col_descs = c(
-#'     "Miles/(US) gallon",
-#'     "Number of cylinders",
-#'     "Displacement (cu.in.)",
-#'     "Gross horsepower",
-#'     "Rear axle ratio",
-#'     "Weight (1000 lbs)",
+#'     "Miles per Gallon",
+#'     "Number of Cylinders",
+#'     "Displacement",
+#'     "Horsepower",
+#'     "Rear Axle Ratio",
+#'     "Weight (per 1000 lbs)",
 #'     "1/4 mile time",
-#'     "V/S"
+#'     "V/S",
+#'     "Transmission (0 = automatic, 1 = manual)",
+#'     "Number of forward gears",
+#'     "Number of carburetors"
 #'   ),
-#'   file = fs::path_temp("mtcars.R")
+#'   file = temp_file,
+#'   overwrite = TRUE
 #' )
 #'
-#' file.edit(fs::path_temp("mtcars.R"))
+#' # View the contents of the file
+#' readLines(temp_file)
 document_dataset <- function(
     data_obj,
     name = "DATASET_NAME",
