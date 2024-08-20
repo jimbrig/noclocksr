@@ -1,0 +1,31 @@
+{
+  "name": "@noclocks/nodejslib",
+  "version": "1.0.0",
+  "description": "A library of Node.js utilities used by No Clocks, LLC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "No Clocks, LLC",
+  "license": "ISC",
+  "dependencies": {
+    "@node-minify/babel-minify": "^5.3.0",
+    "@node-minify/clean-css": "^5.3.0",
+    "@node-minify/core": "^8.0.6",
+    "@node-minify/crass": "^5.3.0",
+    "@node-minify/cssnano": "^8.0.6",
+    "@node-minify/csso": "^5.3.0",
+    "@node-minify/google-closure-compiler": "^5.3.0",
+    "@node-minify/html-minifier": "^5.3.0",
+    "@node-minify/jsonminify": "^5.3.0",
+    "@node-minify/sqwish": "^5.3.0",
+    "@node-minify/terser": "^8.0.6",
+    "@node-minify/uglify-es": "^5.3.0",
+    "@node-minify/uglify-js": "^5.3.0",
+    "@node-minify/yui": "^5.3.0",
+    "clean-css": "^4.2.3",
+    "node-minify": "^1.3.9"
+  },
+  "devDependencies": {
+  }
+}
