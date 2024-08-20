@@ -7,11 +7,17 @@
 <url><loc>http://docs.jimbrig.com/noclocksr/articles/noclocksr.html</loc></url>
 <url><loc>http://docs.jimbrig.com/noclocksr/authors.html</loc></url>
 <url><loc>http://docs.jimbrig.com/noclocksr/index.html</loc></url>
+<url><loc>http://docs.jimbrig.com/noclocksr/reference/cfg_d_init.html</loc></url>
+<url><loc>http://docs.jimbrig.com/noclocksr/reference/cfg_encrypt.html</loc></url>
+<url><loc>http://docs.jimbrig.com/noclocksr/reference/cfg_hooks_init.html</loc></url>
+<url><loc>http://docs.jimbrig.com/noclocksr/reference/cfg_init.html</loc></url>
+<url><loc>http://docs.jimbrig.com/noclocksr/reference/create_cfg_template.html</loc></url>
 <url><loc>http://docs.jimbrig.com/noclocksr/reference/document_dataset.html</loc></url>
 <url><loc>http://docs.jimbrig.com/noclocksr/reference/index.html</loc></url>
 <url><loc>http://docs.jimbrig.com/noclocksr/reference/minify_css.html</loc></url>
 <url><loc>http://docs.jimbrig.com/noclocksr/reference/noclocksr-package.html</loc></url>
 <url><loc>http://docs.jimbrig.com/noclocksr/reference/shiny_debug_button.html</loc></url>
 <url><loc>http://docs.jimbrig.com/noclocksr/reference/utils_html.html</loc></url>
+<url><loc>http://docs.jimbrig.com/noclocksr/reference/validate_cfg.html</loc></url>
 </urlset>
 
