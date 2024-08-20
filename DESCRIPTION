@@ -15,15 +15,20 @@ URL: http://docs.jimbrig.com/noclocksr/,
 BugReports: https://github.com/jimbrig/noclocksr/issues
 Imports: 
     cli,
+    config,
     fs,
     glue,
+    here,
     htmltools,
     httr2,
     purrr,
     rlang,
     shiny,
     shinyjs,
-    tibble
+    stats,
+    tibble,
+    usethis,
+    yaml
 Suggests: 
     knitr,
     rmarkdown,

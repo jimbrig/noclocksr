@@ -1,0 +1,4 @@
+default:
+  mxtoolbox_api_key: "<MXTOOLBOX_API_KEY>"
+  obsidian_local_rest_api_key: "<OBSIDIAN_LOCAL_REST_API_KEY>"
+

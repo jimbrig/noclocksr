@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Pre-commit hook to check and handle config files
+CONFIG_FILE="{{cfg_file}}"
+ENCRYPTED_CONFIG_FILE="{{cfg_file_encrypted}}"
+GIT_IGNORE_FILE="{{cfg_gitignore_file}}"
+
+echo "Running pre-commit hook to check and handle config files"
+echo "CONFIG_FILE: $CONFIG_FILE"
+echo "ENCRYPTED_CONFIG_FILE: $ENCRYPTED_CONFIG_FILE"
+echo "GIT_IGNORE_FILE: $GIT_IGNORE_FILE"
+
+# Function to check if .gitignore exists
+has_gitignore() {
+  [ -f "$GIT_IGNORE_FILE" ]
+}
+
+# Function to check if a file is in .gitignore
+is_ignored() {
+  local file="$1"
+  grep -qxF "$file" "$GIT_IGNORE_FILE"
+}
+
+# Check if config file exists
+if [ -f "$CONFIG_FILE" ]; then
+  # Ensure config file is git ignored
+  if ! is_ignored "$CONFIG_FILE"; then
+    echo "$CONFIG_FILE" >> "$GIT_IGNORE_FILE"
+    echo "Added $CONFIG_FILE to $GIT_IGNORE_FILE"
+    git add "$GIT_IGNORE_FILE"
+  fi
+
+  # Run the R script to encrypt the config file
+  Rscript -e "source('githooks.R'); encrypt_cfg_file()"
+
+  # Add the encrypted config file to git
+  git add "$ENCRYPTED_CONFIG_FILE"
+fi

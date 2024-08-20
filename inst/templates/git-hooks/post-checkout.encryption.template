@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Post-checkout hook to decrypt the config file
+ENCRYPTED_CONFIG_FILE="{{cfg_file_encrypted}}"
+
+# Check if the encrypted config file exists
+if [ -f "$ENCRYPTED_CONFIG_FILE" ]; then
+  # Run the R script to decrypt the config file
+  Rscript -e "source('githooks.R'); decrypt_cfg_file('$ENCRYPTED_CONFIG_FILE')"
+fi

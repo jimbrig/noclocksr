@@ -1,0 +1,10 @@
+default:
+  dockerhub_api_key: "<DOCKERHUB_API_KEY>"
+  dockerhub_org: "<DOCKERHUB_ORG>"
+  ghcr_api_key: "<GHCR_API_KEY>"
+  ghcr_org: "<GHCR_ORG>"
+  gcar_admin_user: "<GCAR_ADMIN_USER>"
+  gcar_admin_pass: "<GCAR_ADMIN_PASS>"
+  acr_admin_user: "<ACR_ADMIN_USER>"
+  acr_admin_pass: "<ACR_ADMIN_PASS>"
+
