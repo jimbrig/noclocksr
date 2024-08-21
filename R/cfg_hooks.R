@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Git Hooks
@@ -10,7 +9,6 @@
 # internal ----------------------------------------------------------------
 
 .clean_git_hook_samples <- function(path = ".git/hooks") {
-
   sample_files <- fs::dir_ls(
     path = path,
     glob = "*.sample"
@@ -20,7 +18,6 @@
     purrr::walk(fs::file_delete)
 
   return(invisible(NULL))
-
 }
 
 # cfg_hooks_init ----------------------------------------------------------
@@ -41,11 +38,9 @@
 #' @importFrom here here
 #' @importFrom usethis use_template
 cfg_hooks_init <- function(
-  cfg_file = Sys.getenv("R_CONFIG_FILE", here::here("inst/config/config.yml")),
-  overwrite = FALSE,
-  ...
-) {
-
+    cfg_file = Sys.getenv("R_CONFIG_FILE", here::here("inst/config/config.yml")),
+    overwrite = FALSE,
+    ...) {
   usethis:::check_uses_git()
 
   cfg_file <- fs::path_rel(cfg_file, start = here::here())
@@ -131,5 +126,4 @@ cfg_hooks_init <- function(
   }
 
   return(invisible(NULL))
-
 }
