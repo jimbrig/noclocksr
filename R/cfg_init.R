@@ -105,7 +105,7 @@ cfg_init <- function(
 
   usethis::use_git_ignore(
     ignores,
-    directory = dirname(cfg_file)
+    directory = fs::path_rel(cfg_dir, here::here())
   )
 
   cli::cli_alert_success("Setup gitignore for config.")
