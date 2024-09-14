@@ -13,15 +13,14 @@
     # Extract the source file path from the "srcfile" attribute within srcref
     src_file <- attr(src_ref, "srcfile")
     if (!is.null(src_file) && !is.null(src_file$filename)) {
-      return(as.character(src_file$filename))  # Return the source file path
+      return(as.character(src_file$filename)) # Return the source file path
     }
   }
 
-  return(NA)  # Return NA if the function's source file cannot be determined
+  return(NA) # Return NA if the function's source file cannot be determined
 }
 
 get_function_srcfile <- function(fun, ns = parent.frame()) {
-
   if (is.character(fun)) {
     fun <- get(fun, envir = ns)
   }
@@ -40,7 +39,6 @@ get_function_srcfile <- function(fun, ns = parent.frame()) {
   }
 
   return(NA)
-
 }
 
 #' Get Source Code of a Function's Definition
@@ -66,7 +64,9 @@ get_function_srcfile <- function(fun, ns = parent.frame()) {
 #'
 #' @examples
 #' get_function_definition(print)
-get_function_definition <- function(fun) { attr(fun, "srcref") }
+get_function_definition <- function(fun) {
+  attr(fun, "srcref")
+}
 
 
 if_unquiet <- function(expr) {
