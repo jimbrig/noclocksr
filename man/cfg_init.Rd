@@ -6,7 +6,7 @@
 \usage{
 cfg_init(
   path = here::here("inst/config"),
-  cfg = list(default = list(NULL)),
+  cfg = list(default = list(key = "value")),
   cfg_file = "config.yml",
   cfg_file_encrypted = "config.encrypted.yml",
   cfg_file_template = "config.template.yml",
