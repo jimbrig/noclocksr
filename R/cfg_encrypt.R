@@ -66,12 +66,10 @@ NULL
 #' @importFrom purrr map_chr
 #' @importFrom usethis use_git_ignore
 encrypt_cfg_file <- function(
-  cfg_file = Sys.getenv("R_CONFIG_FILE", "inst/config/config.yml"),
-  key = "NOCLOCKS_ENCRYPTION_KEY",
-  overwrite = FALSE,
-  ...
-) {
-
+    cfg_file = Sys.getenv("R_CONFIG_FILE", "inst/config/config.yml"),
+    key = "NOCLOCKS_ENCRYPTION_KEY",
+    overwrite = FALSE,
+    ...) {
   if (is.null(Sys.getenv(key)) || !httr2::secret_has_key(key)) {
     cli::cli_abort(
       c(
