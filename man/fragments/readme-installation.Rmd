@@ -1,0 +1,13 @@
+You can install the development version of `noclocksr` using your preferred
+R package installation method:
+
+```R
+# pak
+pak::pak("noclocks/gmhleasr")
+
+# remotes
+remotes::install_github("noclocks/gmhleasr")
+
+# devtools
+devtools::install_github("noclocks/gmhleasr")
+```

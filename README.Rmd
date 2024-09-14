@@ -1,0 +1,43 @@
+---
+output:
+  github_document:
+    toc: true
+    toc_depth: 2
+    includes:
+      before_body: man/fragments/readme-header.Rmd
+      after_body: man/fragments/readme-footer.Rmd
+always_allow_html: yes
+editor_options:
+  markdown:
+    wrap: sentence
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures",
+  out.width = "100%",
+  cache = FALSE,
+  asciicast_theme = if (Sys.getenv("IN_PKGDOWN") == "true") "pkgdown" else "readme"
+)
+```
+
+> This is an R package built by [No Clocks, LLC](https://noclocks.dev) for internal R development purposes.
+
+## Badges
+
+```{badges, child="man/fragments/readme-badges.Rmd"}
+```
+
+## Installation
+
+```{installation, child="man/fragments/readme-installation.Rmd"}
+```
+
+
+## Examples
+
+```{examples, child="man/fragments/readme-examples.Rmd"}
+```
+

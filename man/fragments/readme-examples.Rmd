@@ -1,0 +1,4 @@
+```{r usage, eval=FALSE}
+library(noclocksr)
+noclocksr:awesomefunction()
+```

@@ -1,0 +1,3 @@
+***
+
+&copy; [No Clocks, LLC](https://noclocks.dev) `r format(Sys.Date(), "%Y")`

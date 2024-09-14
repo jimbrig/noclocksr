@@ -1,0 +1,19 @@
+<h1 align="center">No Clocks R Package<code>noclocksr</code></h1>
+
+<p align="center">
+  <a href="CHANGELOG.md">Changelog</a>
+    &middot;  
+  <a href="https://docs.noclocks.dev/noclocksr/">Documentation</a>
+    &middot;  
+  <a href="https://docs.noclocks.dev/noclocksr/develop/">Development Documentation</a>
+</p>
+
+<p align="center">
+  <img src="man/figures/hex.png" width="200px" height="auto" alt="hexlogo"/>
+</p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&multiline=true&width=450&height=80&lines=No+Clocks+R;Built+by+No+Clocks%2C+LLC"/>
+</p>
+
+***

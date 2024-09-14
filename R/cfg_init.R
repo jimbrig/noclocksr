@@ -54,7 +54,7 @@
 #' @importFrom usethis use_git_ignore
 cfg_init <- function(
     path = here::here("inst/config"),
-    cfg = list(default = list(NULL)),
+    cfg = list(default = list(key = "value")),
     cfg_file = "config.yml",
     cfg_file_encrypted = "config.encrypted.yml",
     cfg_file_template = "config.template.yml",
@@ -111,14 +111,14 @@ cfg_init <- function(
   cli::cli_alert_success("Setup gitignore for config.")
 
   # test that can decrypt
-  cfg_file_backup <- fs::path_ext_remove(cfg_file) |>
-    paste0(".backup.yml") |>
-    fs::path()
-  if (fs::file_exists(cfg_file_backup)) {
-    fs::file_delete(cfg_file_backup)
-  }
-  fs::file_move(cfg_file, cfg_file_backup)
-  decrypt_cfg_file(cfg_file_encrypted)
+  # cfg_file_backup <- fs::path_ext_remove(cfg_file) |>
+  #   paste0(".backup.yml") |>
+  #   fs::path()
+  # if (fs::file_exists(cfg_file_backup)) {
+  #   fs::file_delete(cfg_file_backup)
+  # }
+  # fs::file_move(cfg_file, cfg_file_backup)
+  # decrypt_cfg_file(cfg_file_encrypted)
 
   Sys.setenv("R_CONFIG_FILE" = cfg_file)
   cli::cli_alert_info("Set `R_CONFIG_FILE` to: {.file {cfg_file}}")

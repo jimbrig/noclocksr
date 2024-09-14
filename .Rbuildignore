@@ -13,3 +13,4 @@
 ^pkgdown$
 ^codecov\.yml$
 ^CHANGELOG\.md$
+^README\.Rmd$
