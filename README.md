@@ -1,4 +1,8 @@
 
+---
+output: github_document
+---
+
 <h1 align="center">No Clocks R Package<code>noclocksr</code></h1>
 
 <p align="center">
@@ -63,6 +67,6 @@ library(noclocksr)
 noclocksr:awesomefunction()
 ```
 
-***
+------------------------------------------------------------------------
 
-&copy; [No Clocks, LLC](https://noclocks.dev) `r format(Sys.Date(), "%Y")`
+© [No Clocks, LLC](https://noclocks.dev) 2024

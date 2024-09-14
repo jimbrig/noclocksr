@@ -5,7 +5,7 @@ output:
     toc_depth: 2
     includes:
       before_body: man/fragments/readme-header.Rmd
-      after_body: man/fragments/readme-footer.Rmd
+      after_body: man/fragments/readme-footer.md
 always_allow_html: yes
 editor_options:
   markdown:
